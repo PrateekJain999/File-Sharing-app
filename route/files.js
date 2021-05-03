@@ -21,7 +21,6 @@ let upload= multer({
 
 router.post('/', (req,res)=>{
     //validate request
-    res.render('upload');
     //store file
     upload(req, res, async (err)=>{
         if(!req.file){
