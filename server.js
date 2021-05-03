@@ -2,6 +2,7 @@ require('dotenv').config();
 const mong = require('mongoose');
 var app = require('express')();
 const path = require('path');
+const PORT = process.env.PORT || 4000;
 
 mong.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -23,7 +24,7 @@ let startNodeserver = async () => {
     server = await require('./route/files');
 
     return new Promise((resolve, reject) => {
-        app.listen(process.env.PORT, (err) => {
+        app.listen(PORT, (err) => {
             if (err) reject(err);
             resolve();
         });
