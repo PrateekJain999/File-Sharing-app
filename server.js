@@ -20,6 +20,7 @@ const corsOption = {
     origin: process.env.ALLOWED_CLIENT
 }
 app.use(cors(corsOption));
+
 app.use('/api/files', require('./route/files'));
 app.use('/files', require('./route/show'));
 app.use('/files/download', require('./route/download'));
