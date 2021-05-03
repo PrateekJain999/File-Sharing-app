@@ -23,7 +23,7 @@ let startNodeserver = async () => {
     server = await require('./route/files');
 
     return new Promise((resolve, reject) => {
-        app.listen(4000, (err) => {
+        app.listen(process.env.PORT, (err) => {
             if (err) reject(err);
             resolve();
         });
