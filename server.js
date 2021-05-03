@@ -9,6 +9,7 @@ mong.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useCreateIndex: true
 });
+
 app.use(require('express').static('public'));
 app.use(require('express').json());
 
